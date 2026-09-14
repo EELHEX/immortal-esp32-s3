@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMMORTAL-S3  Web Flasher</title>
+<meta name="description" content="Flash IMMORTAL-S3 to your ESP32-S3 directly from the browser.">
+<meta name="theme-color" content="#0a0b0f">
+<meta property="og:title" content="IMMORTAL-S3 — Web Flasher">
+<meta property="og:description" content="One-click install for the ESP32-S3 wireless research platform.">
+<meta property="og:image" content="assets/banner.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="assets/logo.svg" alt="" width="26" height="26">
+    <span class="brand-dot"></span>
+    IMMORTAL-S3
+  </div>
+  <nav class="nav">
+    <a href="#flash">Flash</a>
+    <a href="#features">Features</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#hardware">Hardware</a>
+    <a href="https://github.com/EELHEX/immortal-s3">GitHub</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="flash">
+  <img class="hero-logo" src="assets/logo.svg" alt="IMMORTAL-S3">
+  <div class="sub">v9.10.9 · ESP32-S3 · 16 MB</div>
+  <h1>IMMORTAL-S3</h1>
+  <p class="tagline">A pocket-sized wireless research platform. WiFi · BLE · Sub-GHz · IR · BadUSB · AI · OLED.</p>
+  <div class="badges">
+    <span class="badge accent">● Web Flasher</span>
+    <span class="badge">ESP32-S3</span>
+    <span class="badge">Chrome / Edge</span>
+    <span class="badge">~30 seconds</span>
+  </div>
+  <div class="flasher">
+    <h3>Install IMMORTAL-S3</h3>
+    <p>Plug your board into a USB data port, then click below.</p>
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">⚡ INSTALL IMMORTAL-S3</button>
+      <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
+      <span slot="not-allowed">WebSerial requires HTTPS.</span>
+    </esp-web-install-button>
+    <div class="meta">Requires a USB <b>data</b> cable · Hold BOOT while plugging in if needed</div>
+  </div>
+</section>
+
+<section>
+  <h2>How to flash</h2>
+  <p class="lede">Three steps. No IDE, no Python, no drivers on most systems.</p>
+  <div class="steps">
+    <div class="step"><div><h4>Plug in the board</h4><p>Use a USB data cable. If nothing appears, enter download mode with BOOT/IO0.</p></div></div>
+    <div class="step"><div><h4>Click INSTALL</h4><p>Pick the serial port and let the flasher write and verify the image.</p></div></div>
+    <div class="step"><div><h4>Open the local dashboard</h4><p>After boot, connect to the device's local network and open its dashboard.</p></div></div>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Features</h2>
+  <p class="lede">Everything is designed to run locally on the board.</p>
+  <div class="grid">
+    <div class="card"><h3>WiFi</h3><ul><li>Network reconnaissance</li><li>Wireless testing features</li><li>Packet monitoring</li><li>Station mode</li></ul></div>
+    <div class="card"><h3>Bluetooth LE</h3><ul><li>BLE scanning</li><li>Bluetooth research features</li></ul></div>
+    <div class="card"><h3>Sub-GHz · IR</h3><ul><li>NRF24L01+ research features</li><li>Infrared remote testing</li></ul></div>
+    <div class="card"><h3>BadUSB</h3><ul><li>DuckyScript editor</li><li>Save and validation</li></ul></div>
+    <div class="card"><h3>AI Assistant</h3><ul><li>Gemini integration</li><li>Runtime API key</li><li>Scrollable history</li></ul></div>
+    <div class="card"><h3>Web Dashboard</h3><ul><li>Live OLED mirror</li><li>Virtual controls</li><li>Theme uploader</li></ul></div>
+    <div class="card"><h3>OLED UI</h3><ul><li>Animated menu</li><li>Custom themes</li><li>Games and QR codes</li></ul></div>
+    <div class="card"><h3>System</h3><ul><li>Persistent settings</li><li>Storage browser</li><li>Reboot controls</li></ul></div>
+  </div>
+</section>
+
+<section id="screenshots">
+  <h2>Screenshots</h2>
+  <p class="lede">Drop PNGs into <code class="mono">docs/assets/screenshots/</code>.</p>
+  <div class="shots">
+    <div class="shot"><div class="frame"><img src="assets/screenshots/oled-main-menu.png" alt="Main menu" onerror="this.style.display='none'"></div><div class="caption"><b>OLED main menu</b><span>animated</span></div></div>
+    <div class="shot"><div class="frame"><img src="assets/screenshots/oled-wifi-scan.png" alt="WiFi scan" onerror="this.style.display='none'"></div><div class="caption"><b>WiFi scan</b><span>live</span></div></div>
+    <div class="shot"><div class="frame"><img src="assets/screenshots/oled-lock.png" alt="Lock screen" onerror="this.style.display='none'"></div><div class="caption"><b>Lock screen</b><span>PIN</span></div></div>
+    <div class="shot"><div class="frame"><img src="assets/screenshots/web-dashboard.png" alt="Web dashboard" onerror="this.style.display='none'"></div><div class="caption"><b>Web dashboard</b><span>mirror</span></div></div>
+    <div class="shot"><div class="frame"><img src="assets/screenshots/web-themes.png" alt="Theme uploader" onerror="this.style.display='none'"></div><div class="caption"><b>Theme uploader</b><span>dither</span></div></div>
+    <div class="shot"><div class="frame"><img src="assets/screenshots/oled-theme.png" alt="Custom theme" onerror="this.style.display='none'"></div><div class="caption"><b>Custom theme</b><span>1-bit</span></div></div>
+  </div>
+</section>
+
+<section id="hardware">
+  <h2>Hardware</h2>
+  <p class="lede">Minimum build: ESP32-S3 + OLED.</p>
+  <table class="hw-table">
+    <thead><tr><th>Component</th><th>Pin / Notes</th></tr></thead>
+    <tbody>
+      <tr><td><b>ESP32-S3 DevKit</b></td><td>16 MB flash, PSRAM recommended</td></tr>
+      <tr><td>SSD1306 OLED 128×64</td><td>I²C — <code>0x3C</code> / <code>0x3D</code></td></tr>
+      <tr><td>Buttons ×3</td><td>GPIO 0 · GPIO 1 · GPIO 2 — active low</td></tr>
+      <tr><td>Buzzer</td><td><code>GPIO 3</code></td></tr>
+      <tr><td>IR LED</td><td><code>GPIO 4</code></td></tr>
+      <tr><td>NRF24L01+</td><td>SCK 12 · MISO 13 · MOSI 11 · CSN 10 · CE 5</td></tr>
+      <tr><td>WS2812 RGB</td><td><code>GPIO 48</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Legal notice</h2>
+  <div class="card" style="border-color:var(--danger)">
+    <p style="color:var(--danger);font-weight:600;margin-bottom:8px;">For authorized security testing, education, and research only.</p>
+    <p class="dim">Do not use wireless, USB, credential, phishing, or device-testing functions against systems you do not own or have explicit permission to test.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="left"><img src="assets/logo.svg" alt="" width="18" height="18"><span>IMMORTAL-S3 v9.10.9 — by Eelhex</span></div>
+  <div class="links">
+    <a href="https://github.com/EELHEX/immortal-s3">GitHub</a>
+    <a href="https://github.com/EELHEX/immortal-s3/issues">Issues</a>
+    <a href="https://github.com/EELHEX/immortal-s3/blob/main/LICENSE">License</a>
+    <a href="https://github.com/EELHEX/immortal-s3/blob/main/CHANGELOG.md">Changelog</a>
+  </div>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

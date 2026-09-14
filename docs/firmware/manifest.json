@@ -1,0 +1,11 @@
+{
+  "_note": "Redundant firmware-folder manifest. ESP Web Tools reads the top-level manifest.",
+  "name": "IMMORTAL-S3",
+  "version": "9.10.9",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [{ "path": "immortal-s3.bin", "offset": 0 }]
+    }
+  ]
+}

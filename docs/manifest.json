@@ -1,0 +1,13 @@
+{
+  "name": "IMMORTAL-S3",
+  "version": "9.10.9",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "firmware/immortal-s3.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

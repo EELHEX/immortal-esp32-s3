@@ -22,7 +22,7 @@ WiFi · BLE · IR (full-brand) · NRF24 · Walkie Talkie · Ghost Chat · BadUSB
 
 [![Version](https://img.shields.io/badge/version-9.21.0-46e5b8?style=flat-square)](CHANGELOG.md)
 [![Platform](https://img.shields.io/badge/platform-ESP32--S3-46e5b8?style=flat-square)](#hardware)
-[![Flash](https://img.shields.io/badge/flash-web%20flasher-46e5b8?style=flat-square)](https://EELHEX.github.io/immortal-s3/)
+[![Flash](https://img.shields.io/badge/flash-web%20flasher-46e5b8?style=flat-square)](https://eelhex.github.io/immortal-esp32-s3/)
 [![License](https://img.shields.io/badge/license-Proprietary-ff5c7c?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-46e5b8?style=flat-square)](#roadmap)
 

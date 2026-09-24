@@ -1,5 +1,5 @@
 {
-    "url":  "https://github.com/EELHEX/immortal-esp32-s3/releases/download/v9.30.0/firmware.bin",
+    "url":  "https://raw.githubusercontent.com/EELHEX/immortal-esp32-s3/main/docs/firmware/firmware-v9.30.0.bin",
     "md5":  "555cfa7206135509697f69b3ac307057",
     "version":  "9.30.0",
     "size":  1902528

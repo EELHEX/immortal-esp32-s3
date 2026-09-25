@@ -209,7 +209,7 @@ No app. No cloud. No account. One board, one URL, everything local.
    BUZZER    ─────── GPIO 3
    IR  LED   ─────── GPIO 13
    RGB  LED  ─────── GPIO 48
-   NRF SCK   ─────── GPIO 12
+   NRF SCK   ─────── GPIO 17
    NRF MISO  ─────── GPIO 18
    NRF MOSI  ─────── GPIO 11
    NRF CSN   ─────── GPIO 10

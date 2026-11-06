@@ -1,7 +1,7 @@
 {
   "target": "esp32-c3",
-  "version": "10.2.0",
-  "url": "https://github.com/EELHEX/immortal-esp32-s3/releases/download/v10.2.0/firmware-c3.bin",
+  "version": "10.3.0",
+  "url": "https://github.com/EELHEX/immortal-esp32-s3/releases/download/v10.3.0/firmware-c3.bin",
   "size": 1846960,
-  "sha256": "FE01B83964CF4F625D0E14270F67C95F651C77ED6CC60B4D27E7DD599E23F75B"
+  "sha256": "a83fe51506d0d2391483ed39b5ea366b615ff713222ac17414a145346c9e3543"
 }

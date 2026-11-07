@@ -1,0 +1,13 @@
+{
+  "name": "IMMORTAL-C3",
+  "version": "10.3.3",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C3",
+      "parts": [
+        { "path": "firmware/immortal-c3.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

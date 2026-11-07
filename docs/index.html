@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMMORTAL-S3 — Web Flasher</title>
-<meta name="description" content="Flash IMMORTAL-S3 v9.21.0 to your ESP32-S3 directly from the browser. WiFi · BLE · IR · NRF24 · Walkie · Chat · BadUSB · AI.">
+<meta name="description" content="Flash IMMORTAL-S3 to your ESP32-S3, or IMMORTAL-C3 to your ESP32-C3 Mini, directly from the browser. WiFi · BLE · IR · NRF24 · BadUSB · AI.">
 <meta name="theme-color" content="#0a0b0f">
 <meta property="og:title" content="IMMORTAL-S3 — Web Flasher">
-<meta property="og:description" content="One-click install for the ESP32-S3 wireless research platform.">
+<meta property="og:description" content="One-click install for the ESP32-S3 and ESP32-C3 wireless research platform.">
 <meta property="og:image" content="assets/banner.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -520,10 +520,11 @@ footer a:hover{color:var(--accent)}
   <div class="brand">
     <img src="assets/logo.svg" alt="" width="24" height="24">
     <span class="brand-dot"></span>
-    IMMORTAL-S3
+    IMMORTAL
   </div>
   <nav class="nav">
     <a href="#flash">Flash</a>
+    <a href="#c3">C3 Mini</a>
     <a href="#features">Features</a>
     <a href="#radios">Radios</a>
     <a href="#screenshots">Screens</a>
@@ -538,24 +539,24 @@ footer a:hover{color:var(--accent)}
      HERO / FLASHER
      ============================================================ -->
 <section class="hero" id="flash">
-  <img class="hero-logo" src="assets/logo.svg" alt="IMMORTAL-S3">
-  <div class="sub">v9.21.0 · ESP32-S3 · 16 MB · QIO OPI PSRAM</div>
-  <h1>IMMORTAL-S3</h1>
+  <img class="hero-logo" src="assets/logo.svg" alt="IMMORTAL">
+  <div class="sub">ESP32-S3 · 16 MB QIO OPI PSRAM &nbsp;·&nbsp; ESP32-C3 Mini · 4 MB</div>
+  <h1>IMMORTAL</h1>
   <p class="tagline">
     A pocket-sized wireless research platform.
-    <b>WiFi</b> · <b>BLE</b> · <b>IR (full-brand)</b> · <b>NRF24</b> · <b>Walkie</b> ·
-    <b>Chat</b> · <b>BadUSB</b> · <b>AI</b> · <b>OLED</b>.
+    <b>WiFi</b> · <b>BLE</b> · <b>IR (full-brand)</b> · <b>NRF24</b> ·
+    <b>Bad BLE</b> · <b>AI</b> · <b>OLED</b>.
   </p>
   <div class="badges">
     <span class="badge accent">● Web Flasher</span>
     <span class="badge">ESP32-S3</span>
+    <span class="badge">ESP32-C3</span>
     <span class="badge">Chrome / Edge</span>
     <span class="badge">~30 seconds</span>
-    <span class="badge">v9.21.0</span>
   </div>
   <div class="flasher">
     <h3>Install IMMORTAL-S3</h3>
-    <p>Plug your board into a USB data port, then click below.</p>
+    <p>Plug your ESP32-S3 board into a USB data port, then click below.</p>
     <esp-web-install-button manifest="manifest.json">
       <button slot="activate">⚡ INSTALL IMMORTAL-S3</button>
       <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
@@ -568,7 +569,7 @@ footer a:hover{color:var(--accent)}
   <div class="terminal reveal">
     <div class="term-head">
       <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-      <span class="term-title">immortal-s3 · boot.log</span>
+      <span class="term-title">immortal · boot.log</span>
     </div>
     <div class="line"><span class="prompt">immortal@esp32:~$</span> <span class="txt">boot --safe</span></div>
     <div class="line"><span class="arrow">›</span> <span class="txt">loading kernel..............</span> <span class="ok">OK</span></div>
@@ -577,10 +578,10 @@ footer a:hover{color:var(--accent)}
     <div class="line"><span class="arrow">›</span> <span class="txt">starting OLED...............</span> <span class="ok">OK</span></div>
     <div class="line"><span class="arrow">›</span> <span class="txt">starting wireless...........</span> <span class="ok">OK</span></div>
     <div class="line"><span class="arrow">›</span> <span class="txt">starting IR backend.........</span> <span class="ok">OK</span></div>
-    <div class="line"><span class="arrow">›</span> <span class="txt">starting NRF24 chat.........</span> <span class="ok">OK</span></div>
-    <div class="line"><span class="arrow">›</span> <span class="txt">starting walkie servers.....</span> <span class="ok">OK</span></div>
+    <div class="line"><span class="arrow">›</span> <span class="txt">starting NRF24 link.........</span> <span class="ok">OK</span></div>
+    <div class="line"><span class="arrow">›</span> <span class="txt">starting BLE stack..........</span> <span class="ok">OK</span></div>
     <div class="line"><span class="arrow">›</span> <span class="txt">loading modules.............</span> <span class="ok">OK</span></div>
-    <div class="line" style="margin-top:10px;color:var(--accent);font-weight:600">IMMORTAL-S3 — SYSTEM ONLINE<span class="cursor"></span></div>
+    <div class="line" style="margin-top:10px;color:var(--accent);font-weight:600">IMMORTAL — SYSTEM ONLINE<span class="cursor"></span></div>
   </div>
 
   <!-- stats band -->
@@ -589,7 +590,7 @@ footer a:hover{color:var(--accent)}
     <div class="stat"><div class="num">17</div><div class="lbl">AC Brands</div></div>
     <div class="stat"><div class="num">19</div><div class="lbl">Menu Items</div></div>
     <div class="stat"><div class="num">3</div><div class="lbl">Radios</div></div>
-    <div class="stat"><div class="num">∞</div><div class="lbl">Local Only</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Boards</div></div>
   </div>
 </section>
 
@@ -604,6 +605,84 @@ footer a:hover{color:var(--accent)}
     <div class="step reveal"><div><h4>Click INSTALL</h4><p>Pick the serial port and let the flasher write and verify the image.</p></div></div>
     <div class="step reveal"><div><h4>Open the dashboard</h4><p>After boot, join the AP <code class="mono">immortal</code> / <code class="mono">admin1234</code> and open <code class="mono">192.168.4.1</code>.</p></div></div>
   </div>
+</section>
+
+<!-- ============================================================
+     ESP32-C3 MINI
+     ============================================================ -->
+<section id="c3">
+  <h2>ESP32-C3 Mini</h2>
+  <p class="lede">
+    Same firmware family, smaller board. 4 MB flash, no PSRAM, RISC-V.
+    The C3 build drops the S3-only AC brands to fit; everything else —
+    WiFi, BLE spam, Bad BLE, IR, NRF24, AI, OLED — is there.
+  </p>
+
+  <div style="max-width:560px;margin:0 auto 28px">
+    <div class="flasher reveal" style="margin:0">
+      <h3>Install IMMORTAL-C3</h3>
+      <p>Plug the C3 Mini into a USB data port, then click below.</p>
+      <esp-web-install-button manifest="manifest-c3.json">
+        <button slot="activate">⚡ INSTALL IMMORTAL-C3</button>
+        <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
+        <span slot="not-allowed">WebSerial requires HTTPS.</span>
+      </esp-web-install-button>
+      <div class="meta">
+        ESP32-C3 · 4 MB · native USB-CDC or UART bridge<br>
+        If the port does not appear, hold <b>BOOT</b> (GPIO 9) while plugging in
+      </div>
+    </div>
+  </div>
+
+  <div class="badges" style="margin-bottom:28px">
+    <span class="badge accent">● C3 build</span>
+    <span class="badge">ESP32-C3</span>
+    <span class="badge">RISC-V</span>
+    <span class="badge">4 MB flash</span>
+    <span class="badge">Chrome / Edge</span>
+  </div>
+
+  <table class="hw-table">
+    <thead>
+      <tr><th>C3 Mini pin</th><th>Assignment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>GPIO 0</b></td><td>Button UP — active low, INPUT_PULLUP</td></tr>
+      <tr><td><b>GPIO 1</b></td><td>Button SEL — active low, INPUT_PULLUP</td></tr>
+      <tr><td><b>GPIO 2</b></td><td>IR LED — NPN driver, strapping pin</td></tr>
+      <tr><td><b>GPIO 3</b></td><td>OLED SDA</td></tr>
+      <tr><td><b>GPIO 4</b></td><td>OLED SCL</td></tr>
+      <tr><td><b>GPIO 5</b></td><td>NRF24 MISO</td></tr>
+      <tr><td><b>GPIO 6</b></td><td>NRF24 SCK</td></tr>
+      <tr><td><b>GPIO 7</b></td><td>NRF24 MOSI</td></tr>
+      <tr><td><b>GPIO 8</b></td><td>Buzzer — high-impedance driver, strapping pin</td></tr>
+      <tr><td><b>GPIO 9</b></td><td>Button DOWN — strapping pin</td></tr>
+      <tr><td><b>GPIO 10</b></td><td>Button BACK</td></tr>
+      <tr><td><b>GPIO 20</b></td><td>NRF24 CSN</td></tr>
+      <tr><td><b>GPIO 21</b></td><td>NRF24 CE</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pinmap reveal" style="margin-top:20px">                  ┌───────────────────────┐
+                  │      ESP32-C3 Mini    │
+                  └───────────────────────┘
+   OLED SDA  ─────── <span class="gp">GPIO 3</span>
+   OLED SCL  ─────── <span class="gp">GPIO 4</span>
+   BTN  UP   ─────── <span class="gp">GPIO 0</span>   <span class="cmt">(active low)</span>
+   BTN  SEL  ─────── <span class="gp">GPIO 1</span>   <span class="cmt">(active low)</span>
+   BTN  DOWN ─────── <span class="gp">GPIO 9</span>   <span class="cmt">(strapping)</span>
+   BTN  BACK ─────── <span class="gp">GPIO 10</span>  <span class="cmt">(active low)</span>
+   BUZZER    ─────── <span class="gp">GPIO 8</span>   <span class="cmt">(strapping)</span>
+   IR  LED   ─────── <span class="gp">GPIO 2</span>   <span class="cmt">(strapping)</span>
+   NRF SCK   ─────── <span class="gp">GPIO 6</span>
+   NRF MISO  ─────── <span class="gp">GPIO 5</span>
+   NRF MOSI  ─────── <span class="gp">GPIO 7</span>
+   NRF CSN   ─────── <span class="gp">GPIO 20</span>
+   NRF CE    ─────── <span class="gp">GPIO 21</span>
+   3V3 / GND ─────── <span class="cmt">NRF24 + OLED + IR driver</span>
+
+   <span class="cmt">⚠  no PSRAM on the C3 — TLS and the AI stack share internal heap</span>
+   <span class="cmt">⚠  add 100 µF across NRF24 VCC/GND — module browns out on TX</span></div>
 </section>
 
 <!-- ============================================================
@@ -634,6 +713,7 @@ footer a:hover{color:var(--accent)}
         <li>Apple / Android / Windows spam</li>
         <li>iBeacon flood</li>
         <li>Panic mode (cycles all)</li>
+        <li>Bad BLE — DuckyScript over HID</li>
       </ul>
     </div>
 
@@ -641,7 +721,7 @@ footer a:hover{color:var(--accent)}
       <h3><span class="ic">📻</span>IR — Full Brand</h3>
       <ul>
         <li>14 TV brands</li>
-        <li>17 AC brands (stateful remote)</li>
+        <li>Stateful AC remote</li>
         <li>Fan · Projector · Audio</li>
         <li>TV-B-Gone loop</li>
       </ul>
@@ -653,18 +733,18 @@ footer a:hover{color:var(--accent)}
         <li>Spectrum scan (0–125)</li>
         <li>Channel jammer</li>
         <li>BLE channel jammer</li>
-        <li>Ghost-to-Ghost chat</li>
-        <li>Walkie talkie (PTT voice)</li>
+        <li>RF brute sweep</li>
+        <li>Gate learn / replay / brute</li>
       </ul>
     </div>
 
     <div class="card reveal">
-      <h3><span class="ic">⌨</span>BadUSB</h3>
+      <h3><span class="ic">⌨</span>Bad BLE</h3>
       <ul>
-        <li>DuckyScript editor</li>
-        <li>Validation with line count &amp; ETA</li>
-        <li>Browser-based script management</li>
-        <li>Native USB HID</li>
+        <li>DuckyScript over BLE HID</li>
+        <li>Web script upload / delete</li>
+        <li>REPEAT, DELAY, STRING, modifiers</li>
+        <li>Just Works pairing on connect</li>
       </ul>
     </div>
 
@@ -674,17 +754,17 @@ footer a:hover{color:var(--accent)}
         <li>Gemini integration</li>
         <li>Runtime API key from dashboard</li>
         <li>Multi-turn history on-device</li>
-        <li>Auto model discovery</li>
+        <li>Math mode with local verification</li>
       </ul>
     </div>
 
     <div class="card reveal">
       <h3><span class="ic">🖥</span>OLED UI</h3>
       <ul>
-        <li>Animated 19-item menu</li>
-        <li>3 theme slots (main / lock / chat)</li>
+        <li>Animated main menu</li>
+        <li>Main / lock theme slots</li>
         <li>Lock screen with PIN</li>
-        <li>Games + Tamagotchi pet</li>
+        <li>Games</li>
         <li>Weather · QR codes</li>
       </ul>
     </div>
@@ -695,9 +775,8 @@ footer a:hover{color:var(--accent)}
         <li>Live OLED mirror</li>
         <li>Virtual controls</li>
         <li>Theme uploader (dither / contrast)</li>
-        <li>PCAP manager</li>
-        <li>Walkie launcher (HTTPS + HTTP)</li>
-        <li>Live chat panel</li>
+        <li>Credential viewer</li>
+        <li>AI chat panel</li>
       </ul>
     </div>
 
@@ -705,42 +784,35 @@ footer a:hover{color:var(--accent)}
 </section>
 
 <!-- ============================================================
-     RADIOS — WALKIE + CHAT
+     RADIOS
      ============================================================ -->
 <section id="radios">
   <h2>NRF24 Radios</h2>
-  <p class="lede">Two IMMORTAL-S3 boards can talk to each other without any WiFi infrastructure — voice <em>and</em> text.</p>
+  <p class="lede">Two boards can talk to each other without any WiFi infrastructure.</p>
   <div class="split">
 
     <div class="callout walkie reveal">
-      <span class="tag">Walkie Talkie</span>
-      <h3>Push-to-talk voice over NRF24</h3>
-      <p>µ-law 8 kHz codec, 20 ms frames, 2 Mbps link on channel 90. Live link-quality estimate and distance readout on the OLED.</p>
+      <span class="tag">NRF24 link</span>
+      <h3>Point-to-point over 2.4 GHz</h3>
+      <p>Both S3 and C3 builds drive the same NRF24 SPI wiring. Spectrum, jam, brute, and gate modes are identical on both boards.</p>
       <ul>
-        <li>HTTPS on port <code>:8443</code> (Safari / iOS mic access)</li>
-        <li>HTTP on port <code>:81</code> (Chrome desktop fallback)</li>
-        <li>Self-signed EC P-256 certificate (auto-generated)</li>
-        <li>Drop counters + quality bar on device</li>
+        <li>Channel 0–125, PA_MAX carrier</li>
+        <li>BLE channel jam: ADV ×3 / DATA ×40 / BT ×20 / lock</li>
+        <li>RF brute sweep 0–125 @ 200 µs hop</li>
+        <li>Gate learn / replay / brute</li>
       </ul>
-      <p style="font-family:var(--mono);font-size:11.5px;margin-top:12px;">
-        <code>https://192.168.4.1:8443/walkie</code><br>
-        <code>http://192.168.4.1:81/walkie</code>
-      </p>
     </div>
 
     <div class="callout reveal">
-      <span class="tag">Ghost Chat</span>
-      <h3>Text messaging without WiFi</h3>
-      <p>Two boards exchange encrypted-free messages over the NRF24 link. Roles A / B, reply-to, reactions, delivered ticks, typing indicator.</p>
+      <span class="tag">Web control</span>
+      <h3>Everything over HTTP</h3>
+      <p>No companion app. Join the board's AP, open <code>192.168.4.1</code>, and every function is on the dashboard.</p>
       <ul>
-        <li>28-character messages (single 32-byte packet)</li>
-        <li>Reactions: <code>+1</code> · <code>+haha</code> · <code>+heart</code> · <code>+!</code></li>
-        <li>Unread badge on the OLED main menu</li>
-        <li>Per-device chat log in LittleFS</li>
+        <li>Recon, deauth, PMKID, evil twin</li>
+        <li>Multi-deauth with 8-target queue</li>
+        <li>BLE spam and Bad BLE scripts</li>
+        <li>AI chat with per-thread history</li>
       </ul>
-      <p style="font-family:var(--mono);font-size:11.5px;margin-top:12px;color:var(--dim-2);">
-        Main Menu → Chat · Main Menu → Chat Role
-      </p>
     </div>
 
   </div>
@@ -756,19 +828,19 @@ footer a:hover{color:var(--accent)}
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-main-menu.png" alt="Main menu" onerror="this.style.display='none'"></div><div class="caption"><b>OLED main menu</b><span>animated</span></div></div>
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-wifi-scan.png" alt="WiFi scan" onerror="this.style.display='none'"></div><div class="caption"><b>WiFi scan</b><span>live</span></div></div>
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-lock.png" alt="Lock screen" onerror="this.style.display='none'"></div><div class="caption"><b>Lock screen</b><span>PIN</span></div></div>
-    <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-walkie.png" alt="Walkie status" onerror="this.style.display='none'"></div><div class="caption"><b>Walkie status</b><span>TX / RX</span></div></div>
+    <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-badble.png" alt="Bad BLE" onerror="this.style.display='none'"></div><div class="caption"><b>Bad BLE</b><span>HID</span></div></div>
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/web-dashboard.png" alt="Web dashboard" onerror="this.style.display='none'"></div><div class="caption"><b>Web dashboard</b><span>mirror</span></div></div>
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/web-themes.png" alt="Theme uploader" onerror="this.style.display='none'"></div><div class="caption"><b>Theme uploader</b><span>dither</span></div></div>
     <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-theme.png" alt="Custom theme" onerror="this.style.display='none'"></div><div class="caption"><b>Custom theme</b><span>1-bit</span></div></div>
-    <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-pet.png" alt="Tamagotchi pet" onerror="this.style.display='none'"></div><div class="caption"><b>Tamagotchi pet</b><span>persistent</span></div></div>
+    <div class="shot reveal"><div class="frame"><img src="assets/screenshots/oled-ai.png" alt="AI chat" onerror="this.style.display='none'"></div><div class="caption"><b>AI chat</b><span>Gemini</span></div></div>
   </div>
 </section>
 
 <!-- ============================================================
-     HARDWARE
+     HARDWARE — S3
      ============================================================ -->
 <section id="hardware">
-  <h2>Hardware</h2>
+  <h2>Hardware — S3</h2>
   <p class="lede">Minimum build: ESP32-S3 + SSD1306 OLED. Everything else is optional and auto-detected at boot.</p>
 
   <table class="hw-table">
@@ -820,13 +892,13 @@ footer a:hover{color:var(--accent)}
     <div class="rm-row"><span class="name">Web dashboard</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">AI integration</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">Full-brand IR</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
-    <div class="rm-row"><span class="name">NRF24 Walkie / Chat</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
+    <div class="rm-row"><span class="name">Bad BLE (HID)</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">Multi-Deauth / Combo</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
+    <div class="rm-row"><span class="name">C3 Mini build</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">OTA firmware updates</span><div class="bar warn"><span style="width:65%"></span></div><span class="pct">NEXT</span></div>
     <div class="rm-row"><span class="name">SD card support</span><div class="bar dim"><span style="width:40%"></span></div><span class="pct">PLANNED</span></div>
     <div class="rm-row"><span class="name">NFC / RFID (PN532)</span><div class="bar dim"><span style="width:30%"></span></div><span class="pct">PLANNED</span></div>
     <div class="rm-row"><span class="name">Sub-GHz (CC1101)</span><div class="bar dim"><span style="width:25%"></span></div><span class="pct">PLANNED</span></div>
-    <div class="rm-row"><span class="name">WebSocket OLED stream</span><div class="bar dim"><span style="width:20%"></span></div><span class="pct">PLANNED</span></div>
   </div>
 </section>
 
@@ -838,7 +910,7 @@ footer a:hover{color:var(--accent)}
   <div class="legal">
     <div class="warn-title"><span>⚠</span> Authorized testing only</div>
     <p>
-      IMMORTAL-S3 is provided for <b>authorized security testing, education, and research</b>.
+      IMMORTAL is provided for <b>authorized security testing, education, and research</b>.
       Do not use the wireless, USB, credential-capture, phishing, or device-testing functions
       against systems you do not own or have explicit written permission to test.
       You are solely responsible for complying with the laws that apply to you.
@@ -851,7 +923,7 @@ footer a:hover{color:var(--accent)}
 <footer>
   <div class="left">
     <img src="assets/logo.svg" alt="" width="18" height="18">
-    <span>IMMORTAL-S3 v9.21.0 — by Eelhex</span>
+    <span>IMMORTAL — by Eelhex</span>
   </div>
   <div class="links">
     <a href="https://github.com/EELHEX/immortal-s3">GitHub</a>

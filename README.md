@@ -6,7 +6,7 @@
 
 <img src="docs/assets/logo.svg" alt="IMMORTAL-S3" width="120" />
 
-# IMMORTAL-S3
+# IMMORTAL-S3 & C3 Mini
 
 ### `> INITIALIZING IMMORTAL-S3...`
 

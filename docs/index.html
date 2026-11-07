@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IMMORTAL-S3 — Web Flasher</title>
-<meta name="description" content="Flash IMMORTAL-S3 to your ESP32-S3, or IMMORTAL-C3 to your ESP32-C3 Mini, directly from the browser. WiFi · BLE · IR · NRF24 · BadUSB · AI.">
+<title>IMMORTAL — Web Flasher</title>
+<meta name="description" content="Flash IMMORTAL-S3 to your ESP32-S3, or IMMORTAL-C3 to your ESP32-C3 Mini, directly from the browser. WiFi · BLE · IR · NRF24 · Bad BLE · AI.">
 <meta name="theme-color" content="#0a0b0f">
-<meta property="og:title" content="IMMORTAL-S3 — Web Flasher">
+<meta property="og:title" content="IMMORTAL — Web Flasher">
 <meta property="og:description" content="One-click install for the ESP32-S3 and ESP32-C3 wireless research platform.">
 <meta property="og:image" content="assets/banner.png">
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
 <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 <style>
 /* ============================================================
-   IMMORTAL-S3 — landing page
+   IMMORTAL — landing page
    ============================================================ */
 :root{
   --bg:#07080b;
@@ -41,6 +41,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{min-height:100%;scroll-behavior:smooth}
+[hidden]{display:none!important}
 body{
   font-family:var(--sans);
   background:var(--bg);
@@ -51,7 +52,6 @@ body{
   position:relative;
 }
 
-/* animated grid background */
 body::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background-image:
@@ -67,7 +67,6 @@ body::before{
   to{background-position:44px 44px,44px 44px}
 }
 
-/* radial glows */
 body::after{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
@@ -78,7 +77,6 @@ body::after{
 
 header,main,footer{position:relative;z-index:1}
 
-/* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
@@ -110,13 +108,11 @@ header{
   .nav a{padding:6px 8px;font-size:11px}
 }
 
-/* ---------- main ---------- */
 main{max-width:1240px;margin:0 auto;padding:0 24px 80px}
 section{padding:64px 0;position:relative}
 section + section{border-top:1px solid var(--border)}
 @media(max-width:640px){main{padding:0 16px 60px}section{padding:44px 0}}
 
-/* ---------- typography ---------- */
 h1,h2,h3,h4{font-weight:700;letter-spacing:-.01em;line-height:1.15}
 h2{
   font-size:clamp(22px,3vw,30px);margin-bottom:10px;
@@ -132,7 +128,6 @@ h2::before{
 .mono{font-family:var(--mono);background:var(--bg-elev);border:1px solid var(--border);
   padding:2px 7px;border-radius:5px;font-size:12px;color:var(--accent)}
 
-/* ---------- hero ---------- */
 .hero{
   text-align:center;padding-top:56px;padding-bottom:56px;
   position:relative;
@@ -167,7 +162,6 @@ h2::before{
 }
 .tagline b{color:var(--accent);font-weight:600}
 
-/* ---------- badges ---------- */
 .badges{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:36px}
 .badge{
   font-family:var(--mono);font-size:11px;letter-spacing:.06em;
@@ -179,11 +173,10 @@ h2::before{
 .badge.accent{color:var(--accent);border-color:var(--accent-dim);
   background:rgba(70,229,184,.06);box-shadow:0 0 20px rgba(70,229,184,.1)}
 
-/* ---------- flasher card ---------- */
 .flasher{
   background:linear-gradient(180deg,var(--card) 0%,var(--bg-elev) 100%);
   border:1px solid var(--border);border-radius:20px;
-  padding:32px 28px;max-width:560px;margin:0 auto;
+  padding:24px 24px 26px;max-width:560px;margin:0 auto;
   position:relative;overflow:hidden;
   box-shadow:0 24px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(70,229,184,.04) inset;
   transition:border-color .3s, box-shadow .3s;
@@ -200,6 +193,44 @@ h2::before{
   margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--dim-2);
   text-align:center;line-height:1.5;
 }
+
+/* ---------- board toggle ---------- */
+.board-toggle{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:6px;
+  margin-bottom:20px;
+}
+.board-toggle button{
+  appearance:none;
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--dim);
+  padding:12px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:all .18s;
+  width:100%;
+}
+.board-toggle button:hover{color:var(--text);background:var(--bg-elev)}
+.board-toggle button.on{
+  background:linear-gradient(135deg,var(--accent) 0%,#2ad6a5 100%);
+  color:#002820;
+  border-color:var(--accent);
+  box-shadow:0 0 24px rgba(70,229,184,.3), 0 4px 12px rgba(70,229,184,.15);
+}
+.board-panel{text-align:left}
+
+esp-web-install-button{display:block}
 esp-web-install-button button{
   appearance:none;border:none;width:100%;
   background:linear-gradient(135deg,var(--accent) 0%,#2ad6a5 100%);
@@ -227,13 +258,12 @@ esp-web-install-button [slot=not-allowed]{
   font-size:13px;text-align:center;
 }
 
-/* ---------- terminal boot ---------- */
 .terminal{
   background:#05070a;border:1px solid var(--border);border-radius:14px;
   padding:20px;font-family:var(--mono);font-size:12.5px;line-height:1.75;
   color:var(--dim);overflow:hidden;position:relative;
   box-shadow:0 0 0 1px rgba(70,229,184,.04) inset, 0 20px 50px rgba(0,0,0,.4);
-  margin-top:32px;
+  margin-top:32px;text-align:left;
 }
 .terminal::before{
   content:"";position:absolute;top:0;left:0;right:0;height:32px;
@@ -262,7 +292,6 @@ esp-web-install-button [slot=not-allowed]{
 }
 @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
 
-/* ---------- steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .step{
   background:var(--card);border:1px solid var(--border);border-radius:14px;
@@ -284,7 +313,6 @@ esp-web-install-button [slot=not-allowed]{
 .step h4{font-size:15px;margin-bottom:6px;font-family:var(--mono);letter-spacing:.02em}
 .step p{color:var(--dim);font-size:13px}
 
-/* ---------- feature grid ---------- */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -327,7 +355,6 @@ esp-web-install-button [slot=not-allowed]{
 .card:hover li{color:var(--text)}
 .card:hover li::before{color:var(--accent)}
 
-/* ---------- stat band ---------- */
 .stats{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:14px;margin:36px 0 0;
@@ -351,7 +378,6 @@ esp-web-install-button [slot=not-allowed]{
   letter-spacing:.14em;margin-top:6px;font-family:var(--mono);
 }
 
-/* ---------- screenshots ---------- */
 .shots{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
@@ -387,7 +413,6 @@ esp-web-install-button [slot=not-allowed]{
   border:1px solid var(--border);
 }
 
-/* ---------- hardware table ---------- */
 .hw-table{
   width:100%;border-collapse:collapse;font-size:13.5px;
   background:var(--card);border:1px solid var(--border);border-radius:12px;
@@ -408,7 +433,6 @@ esp-web-install-button [slot=not-allowed]{
   background:rgba(70,229,184,.08);padding:2px 6px;border-radius:4px;
 }
 
-/* ---------- pin map ---------- */
 .pinmap{
   background:#05070a;border:1px solid var(--border);border-radius:14px;
   padding:22px;font-family:var(--mono);font-size:12.5px;line-height:1.8;
@@ -419,7 +443,6 @@ esp-web-install-button [slot=not-allowed]{
 .pinmap .gp{color:var(--accent);font-weight:700}
 .pinmap .cmt{color:var(--dim-2)}
 
-/* ---------- walkie/chat callout ---------- */
 .split{
   display:grid;grid-template-columns:1fr 1fr;gap:14px;
 }
@@ -455,7 +478,6 @@ esp-web-install-button [slot=not-allowed]{
   display:inline-block;margin:2px 0;
 }
 
-/* ---------- roadmap bars ---------- */
 .roadmap{display:flex;flex-direction:column;gap:12px;margin-top:8px}
 .rm-row{display:grid;grid-template-columns:220px 1fr 80px;gap:14px;align-items:center;font-size:13px}
 @media(max-width:640px){.rm-row{grid-template-columns:1fr;gap:4px}}
@@ -474,7 +496,6 @@ esp-web-install-button [slot=not-allowed]{
 .rm-row .bar.dim  > span{background:linear-gradient(90deg,#3a4152,#5f6676);box-shadow:none}
 .rm-row .pct{font-family:var(--mono);font-size:11px;color:var(--dim);text-align:right;letter-spacing:.06em}
 
-/* ---------- legal ---------- */
 .legal{
   background:linear-gradient(135deg,rgba(255,92,124,.05),var(--card) 60%);
   border:1px solid var(--danger);border-radius:14px;padding:22px;
@@ -486,7 +507,6 @@ esp-web-install-button [slot=not-allowed]{
 }
 .legal p{color:var(--dim);font-size:13.5px;line-height:1.6}
 
-/* ---------- footer ---------- */
 footer{
   max-width:1240px;margin:0 auto;padding:30px 24px 40px;
   border-top:1px solid var(--border);
@@ -500,16 +520,13 @@ footer a{color:var(--dim);text-decoration:none;transition:color .15s}
 footer a:hover{color:var(--accent)}
 @media(max-width:640px){footer{flex-direction:column;text-align:center}}
 
-/* scrollbar */
 ::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border-hi);border-radius:100px;border:2px solid var(--bg)}
 ::-webkit-scrollbar-thumb:hover{background:var(--accent-dim)}
 
-/* selection */
 ::selection{background:var(--accent);color:#002820}
 
-/* fade-in on scroll */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 </style>
@@ -524,7 +541,7 @@ footer a:hover{color:var(--accent)}
   </div>
   <nav class="nav">
     <a href="#flash">Flash</a>
-    <a href="#c3">C3 Mini</a>
+    <a href="#c3">C3 Info</a>
     <a href="#features">Features</a>
     <a href="#radios">Radios</a>
     <a href="#screenshots">Screens</a>
@@ -554,15 +571,35 @@ footer a:hover{color:var(--accent)}
     <span class="badge">Chrome / Edge</span>
     <span class="badge">~30 seconds</span>
   </div>
+
   <div class="flasher">
-    <h3>Install IMMORTAL-S3</h3>
-    <p>Plug your ESP32-S3 board into a USB data port, then click below.</p>
-    <esp-web-install-button manifest="manifest.json">
-      <button slot="activate">⚡ INSTALL IMMORTAL-S3</button>
-      <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
-      <span slot="not-allowed">WebSerial requires HTTPS.</span>
-    </esp-web-install-button>
-    <div class="meta">Requires a USB <b>data</b> cable · Hold BOOT while plugging in if needed</div>
+    <div class="board-toggle" role="tablist" aria-label="Select board">
+      <button type="button" class="on" data-board="s3" role="tab" aria-selected="true">ESP32-S3</button>
+      <button type="button" data-board="c3" role="tab" aria-selected="false">ESP32-C3 Mini</button>
+    </div>
+
+    <div class="board-panel" data-board="s3">
+      <h3>Install IMMORTAL-S3</h3>
+      <p>Plug your ESP32-S3 board into a USB data port, then click below.</p>
+      <esp-web-install-button manifest="manifest.json">
+        <button slot="activate">⚡ INSTALL IMMORTAL-S3</button>
+        <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
+        <span slot="not-allowed">WebSerial requires HTTPS.</span>
+      </esp-web-install-button>
+      <div class="meta">Requires a USB <b>data</b> cable · Hold BOOT (GPIO 0) while plugging in if needed</div>
+    </div>
+
+    <div class="board-panel" data-board="c3" hidden>
+      <h3>Install IMMORTAL-C3</h3>
+      <p>Plug your ESP32-C3 Mini into a USB data port, then click below.</p>
+      <esp-web-install-button manifest="manifest-c3.json">
+        <button slot="activate">⚡ INSTALL IMMORTAL-C3</button>
+        <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
+        <span slot="not-allowed">WebSerial requires HTTPS.</span>
+      </esp-web-install-button>
+      <div class="meta">ESP32-C3 · 4 MB · native USB-CDC or UART bridge<br>
+        If the port does not appear, hold <b>BOOT</b> (GPIO 9) while plugging in</div>
+    </div>
   </div>
 
   <!-- boot terminal -->
@@ -599,16 +636,16 @@ footer a:hover{color:var(--accent)}
      ============================================================ -->
 <section id="how">
   <h2>How to flash</h2>
-  <p class="lede">Three steps. No IDE, no Python, no drivers on most systems.</p>
+  <p class="lede">Three steps. No IDE, no Python, no drivers on most systems. Works for both boards.</p>
   <div class="steps">
-    <div class="step reveal"><div><h4>Plug in the board</h4><p>Use a USB data cable. If nothing appears, enter download mode with BOOT/IO0.</p></div></div>
-    <div class="step reveal"><div><h4>Click INSTALL</h4><p>Pick the serial port and let the flasher write and verify the image.</p></div></div>
+    <div class="step reveal"><div><h4>Pick your board above</h4><p>Use the ESP32-S3 / ESP32-C3 toggle in the flasher to select which firmware you are installing.</p></div></div>
+    <div class="step reveal"><div><h4>Plug in and click INSTALL</h4><p>Use a USB data cable. If nothing appears, enter download mode with BOOT. Pick the serial port and let the flasher write and verify.</p></div></div>
     <div class="step reveal"><div><h4>Open the dashboard</h4><p>After boot, join the AP <code class="mono">immortal</code> / <code class="mono">admin1234</code> and open <code class="mono">192.168.4.1</code>.</p></div></div>
   </div>
 </section>
 
 <!-- ============================================================
-     ESP32-C3 MINI
+     ESP32-C3 MINI INFO
      ============================================================ -->
 <section id="c3">
   <h2>ESP32-C3 Mini</h2>
@@ -618,23 +655,7 @@ footer a:hover{color:var(--accent)}
     WiFi, BLE spam, Bad BLE, IR, NRF24, AI, OLED — is there.
   </p>
 
-  <div style="max-width:560px;margin:0 auto 28px">
-    <div class="flasher reveal" style="margin:0">
-      <h3>Install IMMORTAL-C3</h3>
-      <p>Plug the C3 Mini into a USB data port, then click below.</p>
-      <esp-web-install-button manifest="manifest-c3.json">
-        <button slot="activate">⚡ INSTALL IMMORTAL-C3</button>
-        <span slot="unsupported">Your browser doesn't support WebSerial. Use Chrome, Edge, or Opera on desktop.</span>
-        <span slot="not-allowed">WebSerial requires HTTPS.</span>
-      </esp-web-install-button>
-      <div class="meta">
-        ESP32-C3 · 4 MB · native USB-CDC or UART bridge<br>
-        If the port does not appear, hold <b>BOOT</b> (GPIO 9) while plugging in
-      </div>
-    </div>
-  </div>
-
-  <div class="badges" style="margin-bottom:28px">
+  <div class="badges" style="justify-content:flex-start;margin-bottom:28px">
     <span class="badge accent">● C3 build</span>
     <span class="badge">ESP32-C3</span>
     <span class="badge">RISC-V</span>
@@ -895,7 +916,7 @@ footer a:hover{color:var(--accent)}
     <div class="rm-row"><span class="name">Bad BLE (HID)</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">Multi-Deauth / Combo</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">C3 Mini build</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
-    <div class="rm-row"><span class="name">OTA firmware updates</span><div class="bar warn"><span style="width:65%"></span></div><span class="pct">NEXT</span></div>
+    <div class="rm-row"><span class="name">OTA firmware updates</span><div class="bar"><span style="width:100%"></span></div><span class="pct">DONE</span></div>
     <div class="rm-row"><span class="name">SD card support</span><div class="bar dim"><span style="width:40%"></span></div><span class="pct">PLANNED</span></div>
     <div class="rm-row"><span class="name">NFC / RFID (PN532)</span><div class="bar dim"><span style="width:30%"></span></div><span class="pct">PLANNED</span></div>
     <div class="rm-row"><span class="name">Sub-GHz (CC1101)</span><div class="bar dim"><span style="width:25%"></span></div><span class="pct">PLANNED</span></div>
@@ -934,6 +955,23 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <script type="module">
+/* ---------- board toggle ---------- */
+(function boardToggle(){
+  const buttons = document.querySelectorAll('.board-toggle button');
+  const panels  = document.querySelectorAll('.board-panel');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const board = btn.dataset.board;
+      buttons.forEach(b => {
+        const on = b.dataset.board === board;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(p => { p.hidden = p.dataset.board !== board; });
+    });
+  });
+})();
+
 /* ---------- scroll reveal ---------- */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
